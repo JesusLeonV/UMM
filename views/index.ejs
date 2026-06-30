@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVista Reservas</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <nav class="nav">
+                <div class="brand">AeroVista</div>
+                <div id="usuarioActivo" class="user-pill">Invitado</div>
+            </nav>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Aeropuerto internacional</span>
+                    <h1>Reserva vuelos simples, rapidos y seguros</h1>
+                    <p>Busca tu ruta, crea tu cuenta, inicia sesion y confirma tus asientos desde una sola pantalla.</p>
+                    <div class="stats">
+                        <div><strong>24/7</strong><span>Atencion</span></div>
+                        <div><strong>4</strong><span>Rutas activas</span></div>
+                        <div><strong>100%</strong><span>DB local</span></div>
+                    </div>
+                </div>
+                <div class="terminal-card">
+                    <span>Puerta actual</span>
+                    <strong>B7</strong>
+                    <p>Check-in abierto para vuelos internacionales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel auth-panel">
+                <div class="tabs">
+                    <button class="tab active" data-tab="login">Login</button>
+                    <button class="tab" data-tab="registro">Registro</button>
+                </div>
+
+                <form id="loginForm" class="form active-form">
+                    <h2>Ingresar</h2>
+                    <label for="loginEmail">Correo</label>
+                    <input id="loginEmail" type="email" placeholder="tu@email.com">
+                    <label for="loginContrasena">Contrasena</label>
+                    <input id="loginContrasena" type="password" placeholder="Minimo 6 caracteres">
+                    <button type="submit">Entrar</button>
+                    <p id="loginMensaje" class="message"></p>
+                </form>
+
+                <form id="registroForm" class="form">
+                    <h2>Crear cuenta</h2>
+                    <label for="registroNombre">Nombre completo</label>
+                    <input id="registroNombre" type="text" placeholder="Nombre del pasajero">
+                    <label for="registroEmail">Correo</label>
+                    <input id="registroEmail" type="email" placeholder="tu@email.com">
+                    <label for="registroContrasena">Contrasena</label>
+                    <input id="registroContrasena" type="password" placeholder="Minimo 6 caracteres">
+                    <button type="submit">Registrarme</button>
+                    <p id="registroMensaje" class="message"></p>
+                </form>
+            </article>
+
+            <article class="panel search-panel">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow dark">Reservas</span>
+                        <h2>Buscar vuelos</h2>
+                    </div>
+                    <button id="limpiarBusqueda" class="ghost">Ver todos</button>
+                </div>
+
+                <form id="busquedaForm" class="flight-search">
+                    <input id="origen" type="text" placeholder="Origen">
+                    <input id="destino" type="text" placeholder="Destino">
+                    <button type="submit">Buscar</button>
+                </form>
+
+                <div id="vuelosLista" class="flights"></div>
+            </article>
+        </section>
+
+        <section class="panel reservations-panel">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow dark">Mis viajes</span>
+                    <h2>Reservas confirmadas</h2>
+                </div>
+            </div>
+            <div id="reservasLista" class="reservations empty">Inicia sesion para ver tus reservas.</div>
+        </section>
+    </main>
+
+    <div id="modalReserva" class="modal hidden">
+        <form id="reservaForm" class="modal-card">
+            <button type="button" id="cerrarModal" class="close">x</button>
+            <h2>Confirmar reserva</h2>
+            <p id="modalVuelo"></p>
+            <label for="pasajeros">Pasajeros</label>
+            <input id="pasajeros" type="number" min="1" value="1">
+            <button type="submit">Confirmar</button>
+            <p id="reservaMensaje" class="message"></p>
+        </form>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
