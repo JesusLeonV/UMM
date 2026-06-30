@@ -28,6 +28,10 @@ app.use((req, res) => {
     res.status(404).send('<h1>Página no encontrada</h1><a href="/">Volver al inicio</a>');
 });
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+}
+
+module.exports = app;

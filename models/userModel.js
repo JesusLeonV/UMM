@@ -14,6 +14,11 @@ const User = {
         // .get() trae solo una fila
         const user = await db.get('SELECT * FROM usuarios WHERE correo = ?', [correo]);
         return user;
+    },
+    findById: async (id) => {
+        const db = await getDb();
+        const user = await db.get('SELECT id, nombre, correo FROM usuarios WHERE id = ?', [id]);
+        return user;
     }
 };
 
