@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Reservas</title>
+    <link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <header>
+        <nav>
+            <span>Pasajero: <strong><%= user %></strong></span>
+            <a href="/">Ver todos los vuelos</a>
+            <a href="/logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Mis Reservas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código Reserva</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% reservas.forEach(reserva => { %>
+                    <tr>
+                        <td>#<%= reserva.id %></td>
+                        <td><%= reserva.origen %></td>
+                        <td><%= reserva.destino %></td>
+                        <td><%= reserva.fecha %></td>
+                        <td>$<%= reserva.precio %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
